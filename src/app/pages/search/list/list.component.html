@@ -1,0 +1,23 @@
+<div class="card-container">
+  <mat-card class="card" *ngFor="let play of theatrePlays;">
+    <mat-card-header>
+      <div mat-card-avatar></div>
+      <mat-card-title>{{play.title}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="loadedImages.get(play.imageId)">
+    <mat-card-content>
+      <div>
+        <mat-icon>room</mat-icon>
+        <span>{{play.theatreId}}</span>
+      </div>
+      <div>
+        <mat-icon>event</mat-icon>
+        <span>{{play.date | dateFormat}}</span>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="accent" (click)="buyTicket(play.id)">Vásárlás</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+

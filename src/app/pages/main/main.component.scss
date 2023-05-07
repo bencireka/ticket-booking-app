@@ -1,0 +1,45 @@
+.main_component{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-background{
+  background-image: url("../../../assets/images/main-theatre-img.jpg");
+  background-size: cover;
+  height: 70%;
+}
+
+#mainpage-header h1{
+  text-align: center;
+  margin: 0;
+  padding-top: 200px;
+  font-family: "Century Gothic";
+  font-size: 55px;
+}
+#mainpage-header p{
+  text-align: center;
+  margin: 0;
+  padding-top: 50px;
+  font-family: "Century Gothic";
+  font-size: 25px;
+}
+
+.buttons{
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form{
+  width: 100%;
+  text-align: center;
+}
+
+.table-header-even {
+  background-color: springgreen;
+}
+.table-header-odd {
+  background-color: mediumpurple;
+}

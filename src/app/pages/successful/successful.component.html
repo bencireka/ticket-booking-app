@@ -1,0 +1,11 @@
+<div *ngIf="theatrePlay && ticketsInfo" >
+    <h2>Sikeresen jegyet vásároltál a(z) <b>{{theatrePlay.title}}</b> című darabra.</h2>
+    <p>Időpontja: <b>{{theatrePlay.date | dateFormat}}</b></p>
+    <div>
+      <h4>Jegyed adatai:</h4>
+      <p>Szektor: <b>{{ticketsInfo.sector}}</b></p>
+      <p>Sor: <b>{{ticketsInfo.row}}</b></p>
+      <p>Szék száma: <b>{{ticketsInfo.seatNum}}</b></p>
+    </div>
+  <a routerLink="/search">Folytasd a keresést</a>
+</div>

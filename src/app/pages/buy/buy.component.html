@@ -1,0 +1,27 @@
+<div class="main_component">
+  <mat-card class="card" *ngIf = "loadedImage && theatrePlay && ticketsInfo">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>    <h1>{{theatrePlay.title}}</h1> </mat-card-title>
+        <img mat-card-image [src]="loadedImage.data" >
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      <div>Helyszín: {{theatrePlay.theatreId}}</div>
+      <div> Dátum: {{theatrePlay.date | dateFormat}}</div>
+      <mat-form-field>
+        <mat-label for="tickets">Jegyek:</mat-label>
+        <mat-select name="tickets" [formControl]="selectedTicket">
+          <mat-option *ngFor="let info of ticketsInfo" [value]="info.id">
+            {{info.sector}}, {{info.row}}, {{info.seatNum}}, {{info.price}}Ft
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div>
+      <span class="buttons">
+        <button mat-raised-button color="primary" (click)="onSubmit()">Vásárlás</button>
+      </span>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

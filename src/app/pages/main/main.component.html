@@ -1,0 +1,50 @@
+<div class="main_component">
+  <header id="mainpage-header" class="header-background" style="outline: none">
+    <h1>Jegyvásárlás</h1>
+    <p>Kezdje most a keresést a THEATRE-TICKET-SHOP segítségével!</p>
+    <div class="buttons"><button mat-raised-button color="primary" (click)="redirectToSearch()">Keresés</button></div>
+  </header>
+
+  <main>
+    <form [formGroup]="commentsForm" (ngSubmit)="addComment()">
+      <h2>Kérlek értékeld az oldalt!</h2>
+      <div>
+        <mat-form-field>
+          <mat-label for="username">Username:</mat-label>
+          <input matInput id="username" type="text" readonly formControlName="username"/>
+        </mat-form-field>
+      </div>
+      <div class="break"></div>
+      <div>
+        <mat-form-field>
+          <mat-label for="comment">Rating:</mat-label>
+          <mat-select name="comment" formControlName="rating">
+            <mat-option *ngFor="let rating of ratings" [value]="rating">
+              {{rating}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="break"></div>
+      <div>
+        <button mat-raised-button color="accent" type="submit">Add</button>
+      </div>
+    </form>
+    <div class="break"></div>
+    <div>
+      <table *ngIf="comments.length>0">
+        <tr>
+          <th>User</th>
+          <th>Comment</th>
+          <th>Date</th>
+        </tr>
+        <tr *ngFor="let comment of comments; let i=index;" [ngClass]="i%2===0 ? 'table-header-even' : 'table-header-odd'">
+          <td>{{comment.username}}</td>
+          <td>{{comment.rating}}</td>
+          <td>{{comment.date | dateFormat}}</td>
+        </tr>
+      </table>
+    </div>
+  </main>
+</div>
+

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ticket-bookig-project": {
+      "hosting": {
+        "ticket-booking": [
+          "ticket-bookig-project"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ticket-bookig-project"
+  }
+}
